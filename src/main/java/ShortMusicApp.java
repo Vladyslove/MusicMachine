@@ -23,15 +23,20 @@ public class ShortMusicApp {
             Track track = seq.createTrack();
 
             ShortMessage shm1 = new ShortMessage();
-            shm1.setMessage(144,1,44,100);
+            shm1.setMessage(144,1,3,75);
             MidiEvent noteOn = new MidiEvent(shm1, 1);
             track.add(noteOn);
 
             ShortMessage shm2 = new ShortMessage();
-            shm2.setMessage(128,1,44,100);
-            MidiEvent noteOff = new MidiEvent(shm2, 16);
+            shm2.setMessage(128,1,3,75);
+            MidiEvent noteOff = new MidiEvent(shm2, 12);
             track.add(noteOff);
-            
+
+            /* Give the Sequence to the Sequencer (like putting the CD in the CD player)*/
+            player.setSequence(seq);
+
+            player.start(); // start the Sequencer (like pushing play)
+
 
         } catch (MidiUnavailableException e) {
             e.printStackTrace();
