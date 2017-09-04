@@ -23,9 +23,10 @@ public class ShortMusicApp {
             Track track = seq.createTrack();
 
             ShortMessage shm1 = new ShortMessage();
-            shm1.setMessage(144,1,3,75);
-            MidiEvent noteOn = new MidiEvent(shm1, 1);
-            track.add(noteOn);
+            shm1.setMessage(144,1,3,75); // start playing note 3.
+            // Also see setMessage parameters explanation in resources
+            MidiEvent noteOn = new MidiEvent(shm1, 1); // to trigger message shm1 at the first beat
+            track.add(noteOn); // Track hold all the MidiEvent objects.
 
             ShortMessage shm2 = new ShortMessage();
             shm2.setMessage(128,1,3,75);
