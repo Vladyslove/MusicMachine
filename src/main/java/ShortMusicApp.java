@@ -1,4 +1,5 @@
 import javax.sound.midi.*;
+import java.awt.*;
 
 /**
  * Created by User on 05.09.2017.
@@ -6,10 +7,16 @@ import javax.sound.midi.*;
 public class ShortMusicApp {
     public static void main(String[] args) {
         ShortMusicApp smp = new ShortMusicApp();
-        smp.play();
+        if(args.length < 2) {
+            System.out.println("Don't forget the instrument and note args");
+        } else {
+            int instrument = Integer.parseInt(args[0]);
+            int note = Integer.parseInt(args[1]);
+            smp.play(instrument,note);
+        }
     }
 
-    public void play() {
+    public void play(int instrument, int note) {
         try {
             /*The Sequencer is the thing that actually causes a song to be played (Let's imagine it like music CD player)*/
             Sequencer player = MidiSystem.getSequencer();
@@ -22,8 +29,15 @@ public class ShortMusicApp {
             /* Track is the place, where all the songs lives*/
             Track track = seq.createTrack();
 
+            MidiEvent event = null;
+
+            ShortMessage shm0 = new ShortMessage();
+            shm0.setMessage(192,1,instrument,0);
+            MidiEvent changeInstrument = new MidiEvent(shm0, 1);
+            track.add(changeInstrument);
+
             ShortMessage shm1 = new ShortMessage();
-            shm1.setMessage(144,1,3,75); // start playing note 3.
+            shm1.setMessage(144,1, note,75); // start playing note 3.
             // Also see setMessage parameters explanation in resources
             MidiEvent noteOn = new MidiEvent(shm1, 1); // to trigger message shm1 at the first beat
             track.add(noteOn); // Track hold all the MidiEvent objects.
