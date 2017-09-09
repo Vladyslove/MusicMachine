@@ -10,4 +10,11 @@ public class MyDrawPanel extends JPanel {
 
         g.fillRect(25, 55, 95,95);
     }
-}
+
+    public void paintComponent2 (Graphics g) {
+        Image image = new ImageIcon("example.jpg").getImage();
+
+        g.drawImage(image, 2,3,this);
+    }
+
+    }
