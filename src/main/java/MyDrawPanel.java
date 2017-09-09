@@ -17,4 +17,12 @@ public class MyDrawPanel extends JPanel {
         g.drawImage(image, 2,3,this);
     }
 
+    public void paintComponent3 (Graphics g) {
+
+        g.fillRect(0,0,this.getWidth(),this.getHeight());
+        
+    }
+
+
+
     }
