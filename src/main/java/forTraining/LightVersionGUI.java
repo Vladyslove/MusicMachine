@@ -3,6 +3,8 @@ package forTraining;
 import oracle.jrockit.jfr.JFR;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,11 +27,18 @@ public class LightVersionGUI implements ActionListener{
         button.addActionListener(this); // add the listener (this) to the button
 
         MyDrawPanel drawPanel = new MyDrawPanel();
+
+        frame.getContentPane().add(BorderLayout.SOUTH, button);
+        frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
+        frame.setSize(333,333);
+        frame.setVisible(true);
+
+
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        frame.repaint(); 
+        frame.repaint();
     }
 }
