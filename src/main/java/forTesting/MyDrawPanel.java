@@ -1,3 +1,7 @@
+package forTesting;
+
+import com.sun.prism.paint.Gradient;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -29,6 +33,19 @@ public class MyDrawPanel extends JPanel {
         g.setColor(randomColor);
         g.fillOval(65,65, 96,96);
     }
+
+    public void paintComponent4 (Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+
+        GradientPaint gradient = new GradientPaint(65, 65, Color.red, 145, 145, Color.green);
+
+        g2d.setPaint(gradient);
+
+        g2d.fillOval(65,65, 95,95);
+
+    }
+
+
 
 
 
