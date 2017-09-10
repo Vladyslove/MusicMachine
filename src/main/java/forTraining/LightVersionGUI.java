@@ -22,8 +22,14 @@ public class LightVersionGUI implements ActionListener{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JButton button = new JButton("Change colors");
-        button.addActionListener(this);
+        button.addActionListener(this); // add the listener (this) to the button
 
-        button.addActionListener(this);
+        MyDrawPanel drawPanel = new MyDrawPanel();
+    }
 
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        frame.repaint(); 
+    }
 }
