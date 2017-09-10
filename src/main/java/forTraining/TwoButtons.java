@@ -17,6 +17,11 @@ public class TwoButtons {
     public void go() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JButton labelButton = new JButton("Cnange Label");
+        labelButton.addActionListener(new LabelListener);
         
+        JButton colorButton = new JButton("Change Circle");
+        colorButton.addActionListener(new ColorListener);
     }
 }
