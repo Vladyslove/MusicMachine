@@ -1,6 +1,6 @@
 package forTraining.twobuttons;
 
-import forTraining.MyDrawPanel;
+import forTraining.LightVersionGUI.MyDrawPanel;
 
 import javax.swing.*;
 import java.awt.*;
