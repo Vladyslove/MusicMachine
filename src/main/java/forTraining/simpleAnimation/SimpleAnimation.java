@@ -8,8 +8,8 @@ import java.awt.*;
  */
 public class SimpleAnimation {
 
-    int x = 70;
-    int y = 70;
+    int x = 25;
+    int y = 25;
 
     public static void main(String[] args) {
         SimpleAnimation gui = new SimpleAnimation();
@@ -26,13 +26,26 @@ public class SimpleAnimation {
         frame.getContentPane().add(drawPanel);
         frame.setSize(275, 275);
         frame.setVisible(true);
+
+        for (int i = 0; i < 125; i++) {
+            x++;
+            y++;
+
+            drawPanel.repaint();
+
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
     class MyDrawPanel extends JPanel {
         public void paintComponent (Graphics g) {
             g.setColor(Color.blue);
-            g.fillOval(x,y,99,99);
+            g.fillOval(x,y,33,33);
         }
     }
 }
