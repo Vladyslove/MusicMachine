@@ -8,6 +8,9 @@ import java.awt.*;
  */
 public class SimpleAnimation {
 
+    int x = 70;
+    int y = 70;
+
 
 
     class MyDrawPanel extends JPanel {
