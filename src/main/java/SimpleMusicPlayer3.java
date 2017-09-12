@@ -1,12 +1,14 @@
 import javax.sound.midi.*;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by User on 12.09.2017.
  */
-public class SimpleMusicPlayer2 implements ControllerEventListener {
+public class SimpleMusicPlayer3 implements ControllerEventListener {
 
     public static void main(String[] args) {
-        SimpleMusicPlayer2 musicPlayer2 = new SimpleMusicPlayer2();
+        SimpleMusicPlayer3 musicPlayer2 = new SimpleMusicPlayer3();
         musicPlayer2.go();
     }
 
@@ -49,8 +51,19 @@ public class SimpleMusicPlayer2 implements ControllerEventListener {
 
     @Override
     public void controlChange(ShortMessage event) {
-        System.out.println("ha");
+        System.out.print("bang ");
     }
+
+    class MyDrawPanel extends JPanel {
+        public void paintComponent(Graphics g) {
+
+            Graphics2D g2d = (Graphics2D) g;
+            int red = (int) (Math.random() * 250);
+            int green = (int) (Math.random() * 250);
+            int blue = (int) (Math.random() * 250);
+        }
+    }
+
 }
 
 
