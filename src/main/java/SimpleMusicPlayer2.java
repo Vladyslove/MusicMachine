@@ -1,16 +1,22 @@
-package forTraining;
-
 import javax.sound.midi.*;
 
 /**
  * Created by User on 12.09.2017.
  */
-public class SimpleMusicPlayer1 {
+public class SimpleMusicPlayer2 implements ControllerEventListener {
 
     public static void main(String[] args) {
+        SimpleMusicPlayer2 musicPlayer2 = new SimpleMusicPlayer2();
+        musicPlayer2.go();
+    }
+
+    private void go() {
         try {
             Sequencer sequencer = MidiSystem.getSequencer();
             sequencer.open();
+
+            int[] eventIWant = {127};
+            sequencer.addControllerEventListener(this, eventIWant);
 
             Sequence seq = new Sequence(Sequence.PPQ, 4);
             Track track = seq.createTrack();
@@ -30,7 +36,6 @@ public class SimpleMusicPlayer1 {
             e.printStackTrace();
         }
     }
-
     private static MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
         MidiEvent event = null;
         try {
@@ -41,4 +46,11 @@ public class SimpleMusicPlayer1 {
             e.printStackTrace();
         } return event;
     }
+
+    @Override
+    public void controlChange(ShortMessage event) {
+        System.out.println("ha");
+    }
 }
+
+
