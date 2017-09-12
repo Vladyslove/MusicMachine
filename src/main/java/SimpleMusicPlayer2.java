@@ -24,7 +24,7 @@ public class SimpleMusicPlayer2 implements ControllerEventListener {
             for (int i = 5; i < 66; i+=5) {
 
                 track.add(makeEvent(144,1, i, 100,i));
-                track.add(makeEvent(144,1, i, 100,i+2));
+                track.add(makeEvent(176,1, 127, 0,i));
             }
 
             sequencer.setSequence(seq);
