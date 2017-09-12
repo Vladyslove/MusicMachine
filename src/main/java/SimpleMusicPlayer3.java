@@ -5,15 +5,25 @@ import java.awt.*;
 /**
  * Created by User on 12.09.2017.
  */
-public class SimpleMusicPlayer3 implements ControllerEventListener {
+public class SimpleMusicPlayer3 {
+
+    static JFrame f = new JFrame("My First Music Video");
+    static MyDrawPanel ml;
 
     public static void main(String[] args) {
-        SimpleMusicPlayer3 musicPlayer3 = new SimpleMusicPlayer3();
-        musicPlayer3.go();
+        SimpleMusicPlayer3 musicPlayer = new SimpleMusicPlayer3();
+        musicPlayer.go();
     }
 
-    private void go() {
-        try {
+    public void setUpGUI() {
+        ml = new MyDrawPanel();
+        f.setContentPane(ml);
+        f.setBounds(30,30,300,300);
+        f.setVisible(true);
+    }
+
+        private void go() {
+            try {
             Sequencer sequencer = MidiSystem.getSequencer();
             sequencer.open();
 
