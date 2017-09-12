@@ -54,7 +54,16 @@ public class SimpleMusicPlayer3 implements ControllerEventListener {
         System.out.print("bang ");
     }
 
-    class MyDrawPanel extends JPanel {
+    class MyDrawPanel extends JPanel implements ControllerEventListener{
+
+        boolean msg = false;
+
+        @Override
+        public void controlChange(ShortMessage event) {
+            msg = true;
+            repaint();
+        }
+
         public void paintComponent(Graphics g) {
 
             Graphics2D g2d = (Graphics2D) g;
