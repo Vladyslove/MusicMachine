@@ -1,3 +1,5 @@
+package forTraining.archive;
+
 import javax.sound.midi.*;
 
 /**
