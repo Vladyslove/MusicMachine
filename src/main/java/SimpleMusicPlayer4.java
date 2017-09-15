@@ -55,7 +55,13 @@ public class SimpleMusicPlayer4 {
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
-        
+        Box nameBox = new Box(BoxLayout.Y_AXIS);
+        for (int i = 0; i < 16; i++) {
+            nameBox.add(new Label(instrumentNames[i]));
+
+        }
+
+
 
 
     }
