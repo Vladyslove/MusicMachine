@@ -19,8 +19,8 @@ public class SimpleMusicPlayer4 {
 
     String[] instrumentNames = {"Bass Drum", "Closed Hi-Bat", "Open Hi-Hat",
             "Acoustic Snare", "Crash Cymbal", "Band Clap",
-            "H1gh Tom", "Hi Bongo", "Maxacas", "Whistle", "Low Conga",
-            "Cowbell", "Vibraslap", "Low-mid Tom", "High Aqoqo" , "0pQn Hi Conga"};
+            "H1gh Tom", "Hi Bongo", "Maracas", "Whistle", "Low Conga",
+            "Cowbell", "Vibraslap", "Low-mid Tom", "High Aqoqo" , "0pen Hi Conga"};
 
     int[] instruments = {35,42,46,38,49,39,50,60,70,72,64,56,58,47,67,63};
 
@@ -175,6 +175,15 @@ public class SimpleMusicPlayer4 {
             }
         }
     }
-    private MidiEvent makeEvent(int i, int i1, int i2, int i3, int i4) {
+    private MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
+        MidiEvent event = null;
+        ShortMessage a = new ShortMessage();
+        try {
+            a.setMessage(comd, chan, one, two);
+        } catch (InvalidMidiDataException e) {
+            e.printStackTrace();
+        }
+        event = new MidiEvent(a, tick);
+        return event;
     }
 }
