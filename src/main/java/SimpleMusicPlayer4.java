@@ -118,11 +118,13 @@ public class SimpleMusicPlayer4 {
                     trackList[j] = 0;
                 }
             }
-
+            makeTrack(trackList);
+            track.add(makeEvent(176,1,127,0,16));
         }
     }
 
     private class MyStartListener implements ActionListener {
+
     }
 
     private class MyStopListener implements ActionListener {
@@ -132,5 +134,10 @@ public class SimpleMusicPlayer4 {
     }
 
     private class MyDownTempoListener implements ActionListener {
+    }
+
+    private void makeTrack(int[] trackList) {
+    }
+    private MidiEvent makeEvent(int i, int i1, int i2, int i3, int i4) {
     }
 }
