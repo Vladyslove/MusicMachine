@@ -2,6 +2,7 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.Track;
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +15,7 @@ public class SimpleMusicPlayer4 {
     Sequencer sequencer;
     Sequence sequence;
     Track track;
-    JFrame frame;
+    JFrame theFrame;
 
     String[] instrumentNames = {"Bass Drum", "Closed Hi-Bat", "Open Hi-Hat",
             "Acoustic Snare", "Crash Cymbal", "Band Clap",
@@ -22,4 +23,18 @@ public class SimpleMusicPlayer4 {
             "Cowbell", "Vibraslap", "Low-mid Tom", "High Aqoqo" , "0pQn Hi Conga"};
 
     int[] instruments = {35,42,46,38,49,39,50,60,70,72,64,56,58,47,67,63};
+
+    public static void main(String[] args) {
+        new SimpleMusicPlayer4().buildGUI();
+    }
+
+    private void buildGUI() {
+        theFrame = new JFrame("Cyber MusicPlayer");
+        theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        BorderLayout layout = new BorderLayout();
+        JPanel background = new JPanel(layout);
+        background.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        
+
+    }
 }
