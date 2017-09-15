@@ -99,6 +99,13 @@ public class SimpleMusicPlayer4 {
         }
     }
 
+    public void buildTrackAndStart() {
+        int [] trackList = null;
+
+        sequence.deleteTrack(track)
+        track = sequence.createTrack();
+    }
+
     private class MyStartListener implements ActionListener {
     }
 
