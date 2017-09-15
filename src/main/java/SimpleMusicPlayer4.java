@@ -102,13 +102,23 @@ public class SimpleMusicPlayer4 {
     public void buildTrackAndStart() {
         int [] trackList = null;
 
-        sequence.deleteTrack(track)
+        sequence.deleteTrack(track);
         track = sequence.createTrack();
 
         for (int i = 0; i < 16; i++) {
             trackList = new int[16];
-
             
+            int key = instruments[i];
+
+            for (int j = 0; j < 16; j++) {
+                JCheckBox jc = (JCheckBox) chechBoxList.get(j + (16*i));
+                if (jc.isSelected()) {
+                    trackList[j] = key;
+                } else {
+                    trackList[j] = 0;
+                }
+            }
+
         }
     }
 
