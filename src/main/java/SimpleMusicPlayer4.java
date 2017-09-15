@@ -1,6 +1,7 @@
 import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -135,15 +136,33 @@ public class SimpleMusicPlayer4 {
 
     private class MyStartListener implements ActionListener {
 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            buildTrackAndStart();
+        }
     }
 
     private class MyStopListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            sequencer.stop();
+        }
     }
 
     private class MyUpTempoListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            float tempoFactor = sequencer.getTempoFactor();
+            sequencer.setTempoInBPM((float) (tempoFactor * 1.03));
+        }
     }
 
     private class MyDownTempoListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            float tempoFactor = sequencer.getTempoFactor();
+            sequencer.setTempoInBPM((float) (tempoFactor * .97));
+        }
     }
 
     private void makeTrack(int[] trackList) {
