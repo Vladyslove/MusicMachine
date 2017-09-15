@@ -58,8 +58,13 @@ public class SimpleMusicPlayer4 {
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++) {
             nameBox.add(new Label(instrumentNames[i]));
-
         }
+
+        background.add(BorderLayout.EAST, buttonBox);
+        background.add(BorderLayout.WEST, nameBox);
+
+        theFrame.getContentPane().add(background);
+        
 
 
 
