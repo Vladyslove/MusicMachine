@@ -1,4 +1,4 @@
-package forTraining.lightVersionGUI;
+package forTraining.archive3.lightVersionGUI;
 
 import javax.swing.*;
 import java.awt.*;

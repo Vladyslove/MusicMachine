@@ -1,4 +1,4 @@
-package forTraining.simpleAnimation;
+package forTraining.archive3.simpleAnimation;
 
 import javax.swing.*;
 import java.awt.*;
