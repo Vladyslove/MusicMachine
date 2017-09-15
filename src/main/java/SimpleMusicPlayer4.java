@@ -121,6 +121,16 @@ public class SimpleMusicPlayer4 {
             makeTrack(trackList);
             track.add(makeEvent(176,1,127,0,16));
         }
+
+        track.add(makeEvent(192,9,1,0,15));
+        try {
+            sequencer.setSequence(sequence);
+            sequencer.setLoopCount(sequencer.LOOP_CONTINUOUSLY);
+            sequencer.start();
+            sequencer.setTempoInBPM(120);
+        } catch (InvalidMidiDataException e) {
+            e.printStackTrace();
+        }
     }
 
     private class MyStartListener implements ActionListener {
