@@ -104,6 +104,12 @@ public class SimpleMusicPlayer4 {
 
         sequence.deleteTrack(track)
         track = sequence.createTrack();
+
+        for (int i = 0; i < 16; i++) {
+            trackList = new int[16];
+
+            
+        }
     }
 
     private class MyStartListener implements ActionListener {
