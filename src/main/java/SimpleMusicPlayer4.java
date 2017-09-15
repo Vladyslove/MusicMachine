@@ -1,6 +1,4 @@
-import javax.sound.midi.Sequence;
-import javax.sound.midi.Sequencer;
-import javax.sound.midi.Track;
+import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -78,14 +76,27 @@ public class SimpleMusicPlayer4 {
             mainPanel.add(c);
         }
 
-        
+        setUpMidi();
+
+        theFrame.setBounds(50,50,300,300);
+        theFrame.pack();
+        theFrame.setVisible(true);
+    }
 
 
+    private void setUpMidi() {
+        try {
+            sequencer = MidiSystem.getSequencer();
+            sequencer.open();
+            sequence = new Sequence(Sequence.PPQ,4);
+            track = sequence.createTrack();
+            sequencer.setTempoInBPM(111);
 
-
-
-
-
+        } catch (MidiUnavailableException e) {
+            e.printStackTrace();
+        } catch (InvalidMidiDataException e) {
+            e.printStackTrace();
+        }
     }
 
     private class MyStartListener implements ActionListener {
