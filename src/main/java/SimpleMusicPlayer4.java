@@ -3,6 +3,7 @@ import javax.sound.midi.Sequencer;
 import javax.sound.midi.Track;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -34,7 +35,40 @@ public class SimpleMusicPlayer4 {
         BorderLayout layout = new BorderLayout();
         JPanel background = new JPanel(layout);
         background.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+
+        chechBoxList = new ArrayList<JCheckBox>();
+        Box buttonBox = new Box(BoxLayout.Y_AXIS);
+
+        JButton start = new JButton("Start");
+        start.addActionListener(new MyStartListener());
+        buttonBox.add(start);
+
+        JButton stop = new JButton("Stop");
+        stop.addActionListener(new MyStopListener());
+        buttonBox.add(stop);
+
+        JButton upTempo = new JButton("Tempo Up");
+        upTempo.addActionListener(new MyUpTempoListener());
+        buttonBox.add(upTempo);
+
+        JButton downTempo = new JButton("Tempo Up");
+        downTempo.addActionListener(new MyDownTempoListener());
+        buttonBox.add(downTempo);
+
         
 
+
+    }
+
+    private class MyStartListener implements ActionListener {
+    }
+
+    private class MyStopListener implements ActionListener {
+    }
+
+    private class MyUpTempoListener implements ActionListener {
+    }
+
+    private class MyDownTempoListener implements ActionListener {
     }
 }
