@@ -169,7 +169,7 @@ public class SimpleMusicPlayer5 {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            boolean[] checkboxState = new boolean[256];
         }
     }
 
