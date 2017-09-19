@@ -179,7 +179,7 @@ public class SimpleMusicPlayer5 {
                     checkboxState[i] = true;
                 }
             }
-            
+
             try {
                 FileOutputStream fileStream = new FileOutputStream(new File("Checkbox.ser"));
                 ObjectOutputStream os = new ObjectOutputStream(fileStream);
