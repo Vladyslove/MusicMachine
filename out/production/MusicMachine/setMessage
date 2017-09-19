@@ -1,0 +1,6 @@
+setMessage(144, 1, 3, 75)
+setMessage(128, 1, 3, 75)
+144/128 (command) - message type, means Note on
+1 (channel) - type of instruments (like in a band drummer or keyboard player)
+3 (data1) - note to play from
+75 (data2) - velocity of playing
