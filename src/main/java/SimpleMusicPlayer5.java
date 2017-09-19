@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -169,7 +170,16 @@ public class SimpleMusicPlayer5 {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
             boolean[] checkboxState = new boolean[256];
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox check = (JCheckBox) chechBoxList.get(i);
+                if (check.isSelected()) {
+                    checkboxState[i] = true;
+                }
+            }
+            
         }
     }
 
