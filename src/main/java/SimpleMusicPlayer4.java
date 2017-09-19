@@ -50,7 +50,7 @@ public class SimpleMusicPlayer4 {
         upTempo.addActionListener(new MyUpTempoListener());
         buttonBox.add(upTempo);
 
-        JButton downTempo = new JButton("Tempo Up");
+        JButton downTempo = new JButton("Tempo Down");
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
