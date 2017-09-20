@@ -205,7 +205,21 @@ public class SimpleMusicPlayer5 {
             } catch (ClassNotFoundException e1) {
                 e1.printStackTrace();
             }
+
+            for (int i = 0; i < 256; i++) {
+                JCheckBox check = (JCheckBox) chechBoxList.get(i);
+                if (checkboxState[i]) {
+                    check.setSelected(true);
+                } else {
+                    check.setSelected(false);
+                }
+
+            }
         }
+
+
+
+
     }
 
     private void makeTrack(int[] trackList) {
