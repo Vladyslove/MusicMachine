@@ -213,8 +213,9 @@ public class SimpleMusicPlayer5 {
                 } else {
                     check.setSelected(false);
                 }
-
             }
+            sequencer.stop();
+            buildTrackAndStart();
         }
 
 
