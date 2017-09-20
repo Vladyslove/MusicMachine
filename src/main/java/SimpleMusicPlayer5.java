@@ -191,6 +191,14 @@ public class SimpleMusicPlayer5 {
         }
     }
 
+    public class MyReadInListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+        }
+    }
+
     private void makeTrack(int[] trackList) {
         for (int i = 0; i < 16; i++) {
             int key = trackList[i];
