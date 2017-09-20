@@ -181,7 +181,7 @@ public class SimpleMusicPlayer5 {
             }
 
             try {
-                FileOutputStream fileStream = new FileOutputStream(new File("Checkbox.ser"));
+                FileOutputStream fileStream = new FileOutputStream(new File("src/main/java/resources/Checkbox.ser"));
                 ObjectOutputStream os = new ObjectOutputStream(fileStream);
             } catch (FileNotFoundException e1) {
                 e1.printStackTrace();
@@ -195,7 +195,16 @@ public class SimpleMusicPlayer5 {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            boolean [] checkboxState = null;
+            try {
+                FileInputStream fileIn = new FileInputStream(new File("src/main/java/resources/Checkbox.ser"));
+                ObjectInputStream is = new ObjectInputStream(fileIn);
+                checkboxState = (boolean[]) is.readObject();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            } catch (ClassNotFoundException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 
