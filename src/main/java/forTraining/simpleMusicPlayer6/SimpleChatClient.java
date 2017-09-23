@@ -1,6 +1,10 @@
 package forTraining.simpleMusicPlayer6;
 
+import oracle.jrockit.jfr.JFR;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -22,6 +26,43 @@ public class SimpleChatClient {
     }
 
     private void go() {
-        
+
+        JFrame frame = new JFrame("Just Simple Chat Client");
+        JPanel mainPanel = new JPanel();
+        incoming = new JTextArea(15,50);
+        incoming.setLineWrap(true);
+        incoming.setWrapStyleWord(true);
+        incoming.setEditable(false);
+        JScrollPane qScroller = new JScrollPane(incoming);
+        qScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        qScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        outgoing = new JTextField(20);
+        JButton sendButton = new JButton("Send");
+        sendButton.addActionListener(new SendButtonListener);
+        mainPanel.add(qScroller);
+        mainPanel.add(outgoing);
+        mainPanel.add(sendButton);
+        setUpNetworking();
+
+        Thread readerThread = new Thread(new IncomingReader());
+        readerThread.start();
+    }
+
+    private void setUpNetworking() {
+    }
+
+    private class SendButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    private class IncomingReader implements Runnable {
+        @Override
+        public void run() {
+
+        }
     }
 }
