@@ -3,6 +3,7 @@ package forTraining.simpleMusicPlayer6;
 import oracle.jrockit.jfr.JFR;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -47,9 +48,14 @@ public class SimpleChatClient {
 
         Thread readerThread = new Thread(new IncomingReader());
         readerThread.start();
+
+        frame.getContentPane().add(BorderLayout.CENTER, mainPanel);
+        frame.setSize(400,500);
+        frame.setVisible(true);
     }
 
     private void setUpNetworking() {
+        
     }
 
     private class SendButtonListener implements ActionListener {
