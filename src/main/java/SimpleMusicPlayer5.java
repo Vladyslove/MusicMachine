@@ -27,6 +27,7 @@ public class SimpleMusicPlayer5 {
 
     public static void main(String[] args) {
         new SimpleMusicPlayer5().buildGUI();
+
     }
 
     private void buildGUI() {
@@ -84,7 +85,6 @@ public class SimpleMusicPlayer5 {
         theFrame.pack();
         theFrame.setVisible(true);
     }
-
 
     private void setUpMidi() {
         try {
@@ -217,10 +217,6 @@ public class SimpleMusicPlayer5 {
             sequencer.stop();
             buildTrackAndStart();
         }
-
-
-
-
     }
 
     private void makeTrack(int[] trackList) {
