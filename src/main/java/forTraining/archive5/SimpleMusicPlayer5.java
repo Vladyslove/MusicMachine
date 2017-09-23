@@ -1,3 +1,5 @@
+package forTraining.archive5;
+
 import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
