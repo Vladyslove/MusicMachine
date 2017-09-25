@@ -55,12 +55,20 @@ public class SimpleChatClient {
     }
 
     private void setUpNetworking() {
-        
+
     }
 
     private class SendButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            try {
+                writer.println(outgoing.getText());
+                writer.flush();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+            outgoing.setText("");
+            outgoing.requestFocus();
 
         }
     }
