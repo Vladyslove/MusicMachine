@@ -86,7 +86,15 @@ public class SimpleChatClient {
     private class IncomingReader implements Runnable {
         @Override
         public void run() {
-
+            String message;
+            try {
+                while ((message = reader.readLine()) != null) {
+                    System.out.println("read " + message);
+                    incoming.append(message + "\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
