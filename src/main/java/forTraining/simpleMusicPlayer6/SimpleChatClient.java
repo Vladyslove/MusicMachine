@@ -1,6 +1,5 @@
 package forTraining.simpleMusicPlayer6;
 
-import oracle.jrockit.jfr.JFR;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,7 +41,7 @@ public class SimpleChatClient {
 
         outgoing = new JTextField(20);
         JButton sendButton = new JButton("Send");
-        sendButton.addActionListener(new SendButtonListener);
+        sendButton.addActionListener(new SendButtonListener());
         mainPanel.add(qScroller);
         mainPanel.add(outgoing);
         mainPanel.add(sendButton);
