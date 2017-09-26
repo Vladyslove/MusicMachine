@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by User on 26.09.2017.
@@ -65,6 +66,15 @@ public class VerySimpleChatServer {
     }
 
     private void tellEveryone(String message) {
-
+        Iterator it = clientOutputStreams.iterator();
+        while (it.hasNext()) {
+            try {
+                PrintWriter writer = (PrintWriter) it.next();
+                writer.println(message);
+                writer.flush();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -1,6 +1,5 @@
 package forTraining.simpleMusicPlayer6;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,9 +10,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-/**
- * Created by User on 23.09.2017.
- */
+
 public class SimpleChatClient {
 
     JTextArea incoming;
