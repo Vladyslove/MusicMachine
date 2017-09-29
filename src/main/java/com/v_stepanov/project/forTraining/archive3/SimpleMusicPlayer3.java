@@ -1,4 +1,4 @@
-package forTraining.archive3;
+package com.v_stepanov.project.forTraining.archive3;
 
 import javax.sound.midi.*;
 import javax.swing.*;

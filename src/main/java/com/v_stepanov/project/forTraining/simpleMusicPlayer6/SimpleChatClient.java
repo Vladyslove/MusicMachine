@@ -1,4 +1,4 @@
-package forTraining.simpleMusicPlayer6;
+package com.v_stepanov.project.forTraining.simpleMusicPlayer6;
 
 import javax.swing.*;
 import java.awt.*;

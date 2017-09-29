@@ -1,4 +1,4 @@
-package forTraining.archive3.simpleAnimation;
+package com.v_stepanov.project.forTraining.archive3.simpleAnimation;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package forTraining.archive3.lightVersionGUI;
+package com.v_stepanov.project.forTraining.archive3.lightVersionGUI;
 
 import javax.swing.*;
 import java.awt.*;

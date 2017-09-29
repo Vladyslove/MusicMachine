@@ -1,6 +1,6 @@
-package forTraining.archive3.twobuttons;
+package com.v_stepanov.project.forTraining.archive3.twobuttons;
 
-import forTraining.archive3.lightVersionGUI.MyDrawPanel;
+import com.v_stepanov.project.forTraining.archive3.lightVersionGUI.MyDrawPanel;
 
 import javax.swing.*;
 import java.awt.*;
